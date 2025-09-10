@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .main{
+            height: 100vh;
+            width: 100%;
+            background-color: wheat;
+        }
+        .button{
+            height: 50px;
+            width: 200px;
+            font-size: 17px;
+            margin-left: 40%;
+            margin-top: 20%;
+            position: relative;
+            background-color: wheat;
+            border: 1px solid yellow;
+            font-weight: 500;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 200px;
+            border-radius: 10px;
+            opacity: 0;
+            background-color: yellow;
+            animation: div 3s infinite linear;    
+        }
+        @keyframes div {
+            0%{
+                transform: scale(1,1);
+                opacity: 0;
+            }
+            50%{
+                transform: scale(1.5,1.5);
+                opacity: 1;
+
+            }
+            100%{
+                transform: scale(1,1);
+                opacity: 0;
+
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <main class="main">
+        <button class="button">login
+            <div class="div"></div>
+        </button>
+    </main>
+    
+</body>
+</html>

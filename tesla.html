@@ -1,0 +1,3704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>tesla website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            background-color: aqua;
+
+        }
+
+        .video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .sub-main {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-bar {
+            height: 100px;
+            width: 100%;
+            position: relative;
+        }
+
+        .div {
+            height: 100px;
+            width: 200px;
+        }
+
+        .logo {
+            height: 130px;
+            width: 130px;
+            margin-top: -20px;
+            margin-left: 40px;
+        }
+
+        .div1 {
+            height: 100px;
+            width: 600px;
+            margin-left: 30%;
+            margin-top: -100px;
+        }
+
+        .list-items {
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            list-style-type: none;
+            vertical-align: top;
+            padding: 6px 20px;
+            border-radius: 5px;
+            margin-left: 20px;
+            margin-top: 30px;
+            transition: all 0.5s linear;
+            cursor: pointer;
+        }
+
+        .list-items a {
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .list-items:hover {
+            background-color: rgb(220, 227, 248);
+        }
+
+        .list-items a:hover {
+            color: black;
+        }
+
+        .dropdown {
+            height: 80vh;
+            width: 100%;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            top: 60px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .dropdown1 {
+            height: 60vh;
+            width: 100%;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            top: 60px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .dropdown2 {
+            height: 50vh;
+            width: 100%;
+            background-color: white;
+            position: absolute;
+            left: 0;
+            top: 60px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .dropdown2-div {
+            height: 40vh;
+            margin: auto;
+            width: 70%;
+        }
+
+        .dropdown2-div1 {
+            height: 40vh;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+        }
+
+        .div-img {
+            height: 30vh;
+            width: 200px;
+        }
+
+        .div-img1 {
+            height: 30vh;
+            width: 200px;
+        }
+
+        .box2 {
+            height: 70vh;
+            width: 800px;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .box-2 {
+            height: 50vh;
+            width: 800px;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .box3 {
+            height: 60vh;
+            width: 400px;
+            margin-left: 67%;
+            margin-top: -60vh;
+            border-left: 1px solid;
+        }
+
+        .box-3 {
+            height: 50vh;
+            width: 400px;
+            margin-left: 67%;
+            margin-top: -50vh;
+            border-left: 1px solid;
+        }
+
+        .list-items:hover+.dropdown,
+        .list-items:hover+.dropdown1,
+        .list-items:hover+.dropdown2 {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown:hover,
+        .dropdown1:hover,
+        .dropdown2:hover {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .div2 {
+            height: 100px;
+            width: 150px;
+            margin-left: 85%;
+            margin-top: -100px;
+        }
+
+        #icon {
+            font-size: 25px;
+            margin-top: 30px;
+            display: inline-block;
+            margin-left: 10px;
+            color: rgb(255, 255, 255);
+        }
+
+        .div3 {
+            height: 100px;
+            width: 300px;
+            margin: auto;
+        }
+
+        .div3>h1 {
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .div3>h2 {
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .div3>h3 {
+            font-size: 10px;
+            font-weight: 500;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .box {
+            height: 150px;
+            width: 800px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .boxes {
+            height: 60px;
+            width: 100px;
+            display: inline-block;
+            margin-left: 60px;
+            vertical-align: top;
+        }
+
+        .boxes>h1,
+        .bg1-div1>h1,
+        .bg5-div3>h1 {
+            font-size: 24px;
+            font-weight: 500;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .boxes>h2,
+        .bg1-div1>h2,
+        .bg5-div3>h2 {
+            font-size: 12px;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+        }
+
+        #button {
+            height: 40px;
+            width: 256px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 100px;
+            border: none;
+            margin-top: 30px;
+            display: inline-block;
+            color: black;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        #button1 {
+            height: 40px;
+            width: 256px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-block;
+            color: white;
+            border: solid white;
+            background-color: transparent;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        #button:hover {
+            background-color: rgb(220, 227, 248);
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        #button1:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        #box1 {
+            height: 90px;
+            width: 500px;
+            margin-top: 10px;
+            margin: auto;
+        }
+
+        #box1>p {
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 20px;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        #line {
+            border-bottom: 1px solid white;
+        }
+
+        #line:hover {
+            border-bottom: solid white;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .background {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .bg-img {
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+        }
+
+        #div4 {
+            height: 100px;
+            width: 100%;
+            background-color: black;
+            padding-top: 1px;
+        }
+
+        #div-box {
+            height: 100px;
+            width: 350px;
+            margin: auto;
+        }
+
+        #div-box>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 30px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .background2 {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .videos {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0;
+        }
+
+        .v1 {
+            opacity: 1;
+            animation: v1 10s linear infinite;
+
+        }
+
+        @keyframes v1 {
+            0% {
+                opacity: 1;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            21% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            41% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            61% {
+                opacity: 0;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            81% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+
+        }
+
+        .v2 {
+            opacity: 1;
+            animation: v2 10s linear infinite;
+
+        }
+
+        @keyframes v2 {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            21% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            41% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            61% {
+                opacity: 0;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            81% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        .v3 {
+            opacity: 1;
+            animation: v3 10s linear infinite;
+
+        }
+
+        @keyframes v3 {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            21% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            41% {
+                opacity: 1;
+            }
+
+            60% {
+                opacity: 1;
+            }
+
+            61% {
+                opacity: 0;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            81% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        .v4 {
+            opacity: 1;
+            animation: v4 10s linear infinite;
+
+        }
+
+        @keyframes v4 {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            21% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            41% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            61% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            81% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .v5 {
+            opacity: 1;
+            animation: v5 10s linear infinite;
+
+        }
+
+        @keyframes v5 {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            21% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            41% {
+                opacity: 0;
+            }
+
+            60% {
+                opacity: 0;
+            }
+
+            61% {
+                opacity: 0;
+            }
+
+            80% {
+                opacity: 0;
+            }
+
+            81% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+        }
+
+        .div5 {
+            height: 70px;
+            width: 100%;
+            background-color: black;
+            padding-top: 1px;
+        }
+
+        .div7 {
+            height: 150px;
+            width: 100%;
+            background-color: black;
+        }
+
+        .div6 {
+            height: 50px;
+            width: 300px;
+            margin-left: 20%;
+            margin-top: 20px;
+        }
+
+        .circle {
+            height: 10px;
+            width: 10px;
+            margin-left: 10px;
+            display: inline-block;
+            border-radius: 50px;
+            background-color: white;
+        }
+
+        .clr1 {
+            background-color: white;
+            animation: clr1 10s linear infinite;
+        }
+
+        @keyframes clr1 {
+            0% {
+                background-color: white;
+            }
+
+            20% {
+                background-color: white;
+            }
+
+            21% {
+                background-color: grey;
+            }
+
+            100% {
+                background-color: grey;
+            }
+
+        }
+
+        .clr2 {
+            animation: clr2 10s linear infinite;
+        }
+
+        @keyframes clr2 {
+            0% {
+                background-color: grey;
+            }
+
+            20% {
+                background-color: grey;
+            }
+
+            21% {
+                background-color: white;
+            }
+
+            40% {
+                background-color: white;
+            }
+
+            41% {
+                background-color: grey;
+            }
+
+            100% {
+                background-color: grey;
+            }
+
+        }
+
+        .clr3 {
+            animation: clr3 10s linear infinite;
+        }
+
+        @keyframes clr3 {
+
+            0%,
+            40% {
+                background-color: grey;
+            }
+
+            41%,
+            60% {
+                background-color: white;
+            }
+
+            61%,
+            100% {
+                background-color: grey;
+            }
+
+        }
+
+        .clr4 {
+            animation: clr4 10s linear infinite;
+        }
+
+        @keyframes clr4 {
+
+            0%,
+            60% {
+                background-color: grey;
+            }
+
+            61%,
+            80% {
+                background-color: white;
+            }
+
+            81%,
+            100% {
+                background-color: grey;
+            }
+        }
+
+        .clr5 {
+            animation: clr5 10s linear infinite;
+        }
+
+        @keyframes clr5 {
+
+            0%,
+            80% {
+                background-color: grey;
+            }
+
+            81%,
+            100% {
+                background-color: white;
+            }
+        }
+
+        .heading {
+            font-size: 20px;
+            font-weight: 500;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .paragraph {
+            font-size: 14px;
+            font-weight: 400;
+            position: absolute;
+            left: 0;
+            top: 25%;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .div8 {
+            height: 130px;
+            width: 900px;
+            margin-left: 20%;
+            position: relative;
+        }
+
+        .h1 {
+            opacity: 1;
+            animation: h1 10s linear infinite;
+        }
+
+        @keyframes h1 {
+
+            0%,
+            20% {
+                opacity: 1;
+            }
+
+            21%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .p1 {
+            opacity: 1;
+            animation: p1 10s linear infinite;
+        }
+
+        @keyframes p1 {
+
+            0%,
+            20% {
+                opacity: 1;
+            }
+
+            21%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .h2 {
+            opacity: 1;
+            animation: h2 10s linear infinite;
+        }
+
+        @keyframes h2 {
+
+            0%,
+            20% {
+                opacity: 0;
+            }
+
+            21%,
+            40% {
+                opacity: 1;
+            }
+
+            41%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .p2 {
+            opacity: 1;
+            animation: p2 10s linear infinite;
+        }
+
+        @keyframes p2 {
+
+            0%,
+            20% {
+                opacity: 0;
+            }
+
+            21%,
+            40% {
+                opacity: 1;
+            }
+
+            41%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .h3 {
+            opacity: 1;
+            animation: h3 10s linear infinite;
+        }
+
+        @keyframes h3 {
+
+            0%,
+            40% {
+                opacity: 0;
+            }
+
+            41%,
+            60% {
+                opacity: 1;
+            }
+
+            61%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .p3 {
+            opacity: 1;
+            animation: p3 10s linear infinite;
+        }
+
+        @keyframes p3 {
+
+            0%,
+            40% {
+                opacity: 0;
+            }
+
+            41%,
+            60% {
+                opacity: 1;
+            }
+
+            61%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .h4 {
+            opacity: 1;
+            animation: h4 10s linear infinite;
+        }
+
+        @keyframes h4 {
+
+            0%,
+            60% {
+                opacity: 0;
+            }
+
+            61%,
+            80% {
+                opacity: 1;
+            }
+
+            81%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .p4 {
+            opacity: 1;
+            animation: p4 10s linear infinite;
+        }
+
+        @keyframes p4 {
+
+            0%,
+            60% {
+                opacity: 0;
+            }
+
+            61%,
+            80% {
+                opacity: 1;
+            }
+
+            81%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .h5 {
+            opacity: 1;
+            animation: h5 10s linear infinite;
+        }
+
+        @keyframes h5 {
+
+            0%,
+            80% {
+                opacity: 0;
+            }
+
+            81%,
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .p5 {
+            opacity: 1;
+            animation: p5 10s linear infinite;
+        }
+
+        @keyframes p5 {
+
+            0%,
+            80% {
+                opacity: 0;
+            }
+
+            81%,
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box3>li,
+        .box-3>li {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 20px;
+            display: block;
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: black;
+        }
+
+        .box4 {
+            height: 170px;
+            width: 250px;
+            margin-left: 10px;
+            margin-top: 10px;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .box5 {
+            height: 80px;
+            width: 250px;
+        }
+
+        .img {
+            height: 80px;
+            width: 250px;
+        }
+
+        .box4>h1 {
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: black;
+        }
+
+        .di-v {
+            height: 20px;
+            width: 35px;
+            margin-left: 60px;
+            display: inline-block;
+            margin-top: 10px;
+            border-bottom: 1px solid;
+        }
+
+        .di-v>h1,
+        .di-v1>h1,
+        .di-v2>h1 {
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 5px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(52, 54, 59);
+        }
+
+        .di-v>h1:hover,
+        .di-v1>h1:hover,
+        .di-v2>h1:hover {
+            color: black;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .di-v1 {
+            height: 20px;
+            width: 35px;
+            display: inline-block;
+            margin-top: -20px;
+            margin-left: 5%;
+            border-bottom: 1px solid;
+        }
+
+        .di-v1:hover,
+        .di-v2:hover,
+        .di-v:hover {
+            border-bottom: solid;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+
+        }
+
+        .di-v2 {
+            height: 20px;
+            width: 70px;
+            display: inline-block;
+            margin-top: 10px;
+            margin-left: 60px;
+            border-bottom: 1px solid;
+        }
+
+        .bo-x {
+            height: 10px;
+            width: 60px;
+            margin-left: 20px;
+        }
+
+        .bo-x1 {
+            height: 10px;
+            width: 100px;
+            margin-left: 20px;
+        }
+
+        .bo-x3 {
+            height: 10px;
+            width: 130px;
+            margin-left: 20px;
+        }
+
+        .bo-x2 {
+            height: 10px;
+            width: 40px;
+            margin-left: 20px;
+        }
+
+        .bo-x2:hover,
+        .bo-x:hover,
+        .bo-x1:hover,
+        .bo-x3:hover {
+            border-top: solid;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bo-x4 {
+            height: 320px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 5%
+        }
+
+        .bo-x4>li {
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #hd {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(92, 94, 98);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .dropdown2-div1>h1 {
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: black;
+        }
+
+        .bg {
+            height: 900px;
+            width: 100%;
+            background-color: black;
+        }
+
+        .bg1 {
+            height: 900px;
+            width: 100%;
+            border: solid;
+        }
+
+        .bg1>img {
+            height: 900px;
+            width: 100%;
+            position: relative;
+        }
+
+        .bg1-div {
+            height: 54px;
+            width: 900px;
+            margin-left: 14%;
+            position: absolute;
+            margin-top: -140px;
+            top: 100;
+        }
+
+        .bg1-div1 {
+            height: 54px;
+            width: 292px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg-div {
+            height: 275px;
+            width: 491px;
+            display: inline-block;
+            margin-left: 100px;
+            vertical-align: top;
+        }
+
+        .bg-div>h1 {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            margin-top: 20%;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-div>p,
+        .compare>h1 {
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(238, 238, 238);
+        }
+
+        .bg-image {
+            height: 275px;
+            width: 491px;
+        }
+
+        .compare {
+            height: 20px;
+            margin-left: 110px;
+            margin-top: -30px;
+            width: 110px;
+            border-bottom: 1px solid rgb(238, 238, 238);
+        }
+
+        .bg2 {
+            height: 300px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .bg-2 {
+            height: 300px;
+            width: 100%;
+            background-color: black;
+        }
+
+        .bg2-div,
+        .bg-2-div,
+        .bg--2-div {
+            height: 300px;
+            width: 30%;
+            padding-top: 1px;
+        }
+
+        .bg2-div1,
+        .bg-2-div1,
+        .bg--2-div1 {
+            height: 250px;
+            width: 70%;
+            margin-left: 30%;
+            margin-top: -250px;
+        }
+
+        .bg2-div1>p,
+        .bg-2-div1>p {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgb(57, 60, 65);
+            margin-left: 100px;
+            line-height: 20px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-2-div11>p,
+        .bg--2-div1>p {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgb(238, 238, 238);
+            margin-left: 100px;
+            line-height: 20px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .chat {
+            height: 10px;
+            width: 150px;
+            margin-left: 40%;
+            margin-top: -25px;
+            border-top: 1px solid;
+        }
+
+        .chat1 {
+            height: 10px;
+            width: 142px;
+            margin-left: 28%;
+            margin-top: 10px;
+            border-top: 1px solid;
+        }
+
+        .chat2 {
+            height: 10px;
+            width: 150px;
+            margin-left: 27%;
+            margin-top: -19px;
+            border-top: 1px solid;
+        }
+
+        .chat3 {
+            height: 10px;
+            width: 142px;
+            margin-left: 13%;
+            margin-top: 10px;
+            border-top: 1px solid;
+        }
+
+        .chat1:hover,
+        .chat:hover .chat2:hover,
+        .chat3:hover {
+            border-top: solid;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bg2div {
+            height: 300px;
+            width: 250px;
+            margin: auto;
+        }
+
+        .bg-2div {
+            height: 300px;
+            width: 300px;
+            margin: auto;
+        }
+
+        .bg2div>p,
+        .bg5-div4>p {
+            font-size: 17px;
+            font-weight: 400;
+            margin-left: 10px;
+            margin-top: 40px;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-2div>p {
+            font-size: 17px;
+            font-weight: 400;
+            margin-left: 10px;
+            margin-top: 40px;
+            color: rgb(255, 255, 255);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg2div>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg5-div4>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-left: 30px;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-2div>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .order {
+            height: 40px;
+            width: 200px;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            margin-top: 30px;
+            border: solid;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        .order1 {
+            height: 40px;
+            width: 200px;
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            margin-top: 30px;
+            border: solid white;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        .model {
+            height: 40px;
+            width: 200px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: rgb(244, 244, 244);
+            color: black;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            margin-top: 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        .demo {
+            height: 40px;
+            width: 200px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: grey;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            margin-top: 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        .order:hover,
+        .button3:hover,
+        .order2:hover,
+        #order4:hover {
+            background-color: black;
+            color: white;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .order1:hover {
+            background-color: white;
+            color: black;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .model:hover,
+        .button4:hover,
+        #demo1:hover {
+            background-color: rgba(131, 131, 192, 0.256);
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .demo:hover {
+            background-color: rgb(65, 64, 64);
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bg3 {
+            height: 900px;
+            width: 100%;
+            background-color: rgb(205, 205, 205);
+            padding-top: 1px;
+        }
+
+        .bg3-div {
+            height: 300px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .bg3-div>h1 {
+            font-size: 28px;
+            color: rgb(23, 26, 32);
+            font-weight: 500;
+            margin-left: 10%;
+            margin-top: 8%;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg3-div>p {
+            font-size: 14px;
+            color: rgb(57, 60, 65);
+            font-weight: 400;
+            margin-left: 10%;
+            margin-top: 30px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .imge-div {
+            height: 550px;
+            width: 90%;
+            position: relative;
+            margin: auto;
+        }
+
+        .images {
+            height: 550px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .bg4 {
+            height: 392px;
+            width: 100%;
+            background-color: rgb(205, 205, 205);
+        }
+
+        .bg4-div {
+            height: 200px;
+            width: 470px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 100px;
+            margin-top: 80px;
+            animation: anime 3s linear infinite;
+        }
+
+        .bg4--div {
+            height: 200px;
+            width: 470px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 100px;
+            margin-top: 80px;
+            animation: animation 3s linear infinite;
+        }
+
+        @keyframes anime {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes animation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+        }
+
+        .bg4-div>h1,
+        .bg4--div>h1 {
+            font-size: 17px;
+            font-weight: 500;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(23, 26, 32);
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .bg4-div>p,
+        .bg4--div>p {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(23, 26, 32);
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .bg4-div1 {
+            height: 60px;
+            width: 400px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .bg4-div2 {
+            height: 60px;
+            width: 116px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+        }
+
+        .bg4-div2>h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-left: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(23, 26, 32);
+        }
+
+        .bg4-div2>p {
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(92, 94, 98);
+        }
+
+        .rollout {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgb(92, 94, 98);
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .bg5 {
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .bg5-div {
+            height: 100vh;
+            width: 70%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg5-div>video {
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .bg5-div3 {
+            height: 100px;
+            width: 33%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg5-div2 {
+            height: 100px;
+            position: absolute;
+            top: 100;
+            margin-top: -170px;
+            left: 0;
+            width: 70%;
+        }
+
+        .bg5-div1 {
+            height: 100vh;
+            width: 30%;
+            margin-left: 70%;
+            padding-top: 1px;
+            margin-top: -100vh;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg5-div4 {
+            height: 300px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        #para1 {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 30px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(57, 60, 65);
+        }
+
+        .tesla-adviser {
+            height: 10px;
+            width: 150px;
+            border-bottom: 1px solid;
+            margin-left: 18%;
+            margin-top: -48px;
+        }
+
+        .drive {
+            height: 10px;
+            width: 140px;
+            border-bottom: 1px solid;
+            margin-left: 38%;
+            margin-top: 11px;
+        }
+
+        .drive:hover,
+        .tesla-adviser:hover {
+            border-bottom: solid;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .button3 {
+            height: 40px;
+            width: 336px;
+            border: solid;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-left: 30px;
+        }
+
+        .button4 {
+            height: 40px;
+            width: 336px;
+            border: none;
+            background-color: rgb(244, 244, 244);
+            color: black;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+
+        .bg6 {
+            height: 900px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .bg7 {
+            height: 300px;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .bg7-div,
+        .bg7-div1,
+        .bg7-div2,
+        .bg7-div3 {
+            height: 96px;
+            width: 278px;
+            border-top: 5px solid;
+            margin-left: 30px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg7-div>h1,
+        .bg7-div1>h1,
+        .bg7-div2>h1,
+        .bg7-div3>h1 {
+            font-size: 17px;
+            font-weight: 500;
+            margin-top: 10px;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+        }
+
+        #bg7-hd,
+        #bg7-hd1,
+        #bg7-hd2,
+        #bg7-hd3 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-top: 20px;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+        }
+
+        .bg7-div {
+            animation: div 8s infinite linear;
+            opacity: 1;
+        }
+
+        @keyframes div {
+            0% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+
+            25% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+
+            50% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            75% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            100% {
+                opacity: 0;
+                border-top: 1px solid;
+
+            }
+
+        }
+
+        .bg7-div1 {
+            animation: div1 8s infinite linear;
+            opacity: 1;
+        }
+
+        @keyframes div1 {
+            0% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            25% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            26% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+
+            50% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+
+            75% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            100% {
+                opacity: 0;
+                border-top: 1px solid;
+
+            }
+
+        }
+
+        .bg7-div2 {
+            animation: div2 8s infinite linear;
+            opacity: 1;
+        }
+
+        @keyframes div2 {
+            0% {
+                opacity: 0;
+                border-top: 1px solid;
+
+            }
+
+            25% {
+                opacity: 0;
+                border-top: 1px solid;
+
+            }
+
+            50% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            51% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+
+            75% {
+                opacity: 1;
+                border-top: 5px solid;
+
+            }
+
+            100% {
+                opacity: 0;
+                border-top: 1px solid;
+
+            }
+        }
+
+        .bg7-div3 {
+            animation: div3 8s infinite linear;
+            opacity: 1;
+        }
+
+        @keyframes div3 {
+            0% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            25% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            50% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            51% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            75% {
+                opacity: 0;
+                border-top: 1px solid;
+            }
+
+            76% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+
+            100% {
+                opacity: 1;
+                border-top: 5px solid;
+            }
+        }
+
+        .order2 {
+            height: 40px;
+            width: 200px;
+            background-color: white;
+            color: black;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            margin-top: 80px;
+            border: solid;
+            margin-left: 40%;
+            border-radius: 5px;
+        }
+
+        .bg8 {
+            height: 900px;
+            width: 100%;
+            background-color: white;
+        }
+
+        .bg9,
+        .bg10 {
+            height: 100vh;
+            width: 100%;
+            background-color: white;
+        }
+
+        .bg8-img {
+            height: 362px;
+            width: 942px;
+            margin-left: 23%;
+            margin-top: 20%;
+        }
+
+        .bg8-div {
+            height: 200px;
+            width: 400px;
+            margin-top: -40%;
+        
+            margin-left: 30px;
+        }
+
+        .bg8-div>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-left: 20px;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg8-div>p,
+        .bg9-div2>h1 {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgb(57, 60, 65);
+            margin-left: 20px;
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .input {
+            height: 40px;
+            width: 217px;
+            background-color: rgb(244, 244, 244);
+            border-radius: 5px;
+            margin-left: 20px;
+            padding-left: 20px;
+            margin-top: 20px;
+            border: none;
+        }
+
+        .next {
+            height: 40px;
+            width: 217px;
+            background-color: black;
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .next:hover {
+            background-color: rgb(40, 38, 38);
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bg9-div {
+            height: 500px;
+            width: 350px;
+            margin-left: 30px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg9-div>h1 {
+            font-size: 17px;
+            font-weight: 400;
+            color: rgb(23, 26, 32);
+            margin-left: 10px;
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg9-div>p {
+            font-size: 17px;
+            font-weight: 400;
+            color: rgb(57, 60, 65);
+            margin-left: 10px;
+            margin-top: 20px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg9-div>h2 {
+            font-size: 28px;
+            font-weight: 500;
+            color: rgb(23, 26, 32);
+            margin-left: 10px;
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg9-div1 {
+            height: 500px;
+            width: 750px;
+            margin-left: 30%;
+            margin-top: -500px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg9-img {
+            height: 500px;
+            width: 750px;
+        }
+
+        .bg9-div2 {
+            height: 500px;
+            width: 130px;
+            border-left: 3px solid;
+            margin-left: 89%;
+            margin-top: -517px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #order4 {
+            height: 40px;
+            width: 328px;
+            border-radius: 5px;
+            background-color: white;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            color: black;
+            border: solid;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        #demo1 {
+            height: 40px;
+            width: 328px;
+            border-radius: 5px;
+            background-color: rgb(244, 244, 244);
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            border: none;
+            color: black;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        .bg10-img {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .bg10-div {
+            height: 400px;
+            width: 300px;
+            position: absolute;
+            left: 0;
+            top: 100;
+            margin-top: -40%;
+            margin-left: 40px;
+        }
+
+        .bg10-div1 {
+            height: 130px;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .bg10-div1>h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-left: 10px;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg10-div1>p {
+            font-size: 12px;
+            margin-left: 10px;
+            margin-top: 20px;
+            font-weight: 500;
+            color: rgb(23, 26, 32);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg10-div1>img {
+            height: 30px;
+            margin-left: 10px;
+            width: 30px;
+
+        }
+
+        .imge-div1 {
+            height: 550px;
+            width: 90%;
+        }
+
+        .imge-div1>video {
+            height: 550px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .imge-div>img {
+            height: 550px;
+            width: 100%;
+        }
+
+        .img1 {
+            opacity: 1;
+            animation: img1 8s linear infinite;
+        }
+
+        @keyframes img1 {
+            0% {
+                opacity: 1;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        .img2 {
+            opacity: 1;
+            animation: img2 8s linear infinite;
+        }
+
+        @keyframes img2 {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 0;
+            }
+
+            26% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        .img3 {
+            opacity: 1;
+            animation: img3 8s linear infinite;
+        }
+
+        @keyframes img3 {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 0;
+            }
+
+            26% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            51% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        .img4 {
+            opacity: 1;
+            animation: img4 8s linear infinite;
+        }
+
+        @keyframes img4 {
+            0% {
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 0;
+            }
+
+            26% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 0;
+            }
+
+            76% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .bg-1 {
+            height: 900px;
+            width: 100%;
+            background-color: black;
+        }
+
+        .bg-1div {
+            height: 800px;
+            width: 50%;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .bg-1div>img {
+            height: 800px;
+            width: 100%;
+        }
+
+        .bg-1div1 {
+            height: 800px;
+            width: 20%;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .bg-1div2 {
+            height: 800px;
+            width: 20%;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .bg-1div1>h1 {
+            font-size: 28px;
+            margin-top: 40px;
+            font-weight: 300px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .button-1 {
+            font-size: 12px;
+            height: 32px;
+            width: 212px;
+            margin-top: 20px;
+            font-weight: 500;
+            border-radius: 5px;
+            border: solid white;
+            display: inline-block;
+            vertical-align: top;
+            background-color: black;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .button-2 {
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 39%;
+            height: 32px;
+            width: 212px;
+            font-weight: 500;
+            border-radius: 5px;
+            border: solid grey;
+            background-color: black;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: grey;
+        }
+
+        .bg-1div3 {
+            height: 65px;
+            width: 220px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .bg-1div4 {
+            height: 100px;
+            width: 220px;
+            margin-top: 20px;
+        }
+
+        .bg-1div5 {
+            height: 150px;
+            margin-top: 20px;
+            width: 220px;
+        }
+
+        .bg-1div6 {
+            height: 19px;
+            width: 70px;
+            border-bottom: solid 1px rgb(255, 255, 255);
+        }
+
+        .bg-1div6:hover {
+            border-bottom: solid rgb(255, 255, 255);
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bg-1div3>h1,
+        .bg-1div4>h1,
+        .bg-1div5>h1 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+        }
+
+        .bg-1div3>p,
+        .bg-1div4>p,
+        .bg-1div5>p,
+        .bg-1div6>p {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgb(238, 238, 238);
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-1div7 {
+
+            width: 30px;
+            margin-top: 10px;
+            border-top: 1px solid grey;
+        }
+
+        .bg-2 {
+            height: 900px;
+            width: 100%;
+            background-color: white;
+        }
+         .bg--2 {
+            height: 900px;
+            width: 100%;
+            background-color: white;
+        }
+
+
+        .bg-2div1 {
+            height: 314px;
+            width: 429px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 140px;
+            margin-top: 150px;
+        }
+         .bg--2div1 {
+            height: 314px;
+            width: 429px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 140px;
+            margin-top: 150px;
+        }
+         .bg--2div {
+            height: 314px;
+            width: 429px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 140px;
+            margin-top: 150px;
+        }
+
+
+        .bg-2div1>img {
+            height: 314px;
+            width: 100%;
+        }
+          .bg--2div1>img {
+            height: 314px;
+            width: 100%;
+        }
+           .bg--2div>img {
+            height: 314px;
+            width: 100%;
+        }
+
+
+        .bg-2div1>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-left: 20px;
+            color: rgb(23, 26, 32);
+            margin-top: 20px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+         .bg--2div1>h1 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-left: 20px;
+            color: rgb(23, 26, 32);
+            margin-top: 20px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-2div1>p {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 20px;
+            color: rgb(57, 60, 65);
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+         .bg--2div1>p {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 20px;
+            color: rgb(57, 60, 65);
+            margin-top: 10px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .bg-2-button {
+            height: 40px;
+            width: 204px;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            border: solid;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .bg-2-button1 {
+            height: 40px;
+            width: 204px;
+            border-radius: 5px;
+            background-color: rgb(244, 244, 244);
+            color: black;
+            border: none;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .bg-2-button:hover {
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bg-2-button1:hover {
+            background-color: rgba(131, 131, 192, 0.256);
+            font-size: 14px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: 500;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+        .bg-2div2 {
+            height: 80px;
+            width: 679px;
+            margin: auto;
+            margin-top: 19%;
+        }
+
+        .bg-2div2>p {
+            font-size: 12px;
+            font-weight: 400;
+            margin-left: 10px;
+            color: rgb(92, 94, 98);
+            line-height: 18px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .paragraph--{
+            font-size: 12px;
+            font-weight: 400;
+            margin-left: 30px;
+            color: rgb(92, 94, 98);
+            line-height: 18px;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        #span:hover{
+            color: black;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+        .bg-2div3:hover{
+            border-top: solid;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+        .bg-2div3{
+            height: 10px;
+            width: 320px;
+            margin-top: -3px;
+            margin-left: 8%;
+            border-top: 1px solid rgb(92, 94, 98);
+        }
+        .ul{
+            height: 50px;
+            width: 550px;
+            margin-left: 25%;
+            margin-top: 50px;
+        }
+        .ul>li{
+            font-size: 12px;
+            width: 500;
+            color: rgb(92, 94, 98);
+            margin-left: 10px;
+            display: inline-block;
+            margin-top: 10px;
+            font-family:  "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .button-5{
+            height: 40px;
+            width: 204px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: "Gotham SSm", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            border: solid white;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 40%;
+            padding-top: 5px;
+            text-align: center;
+            color: white;
+        }
+        .button-5:hover{
+            background-color: white;
+            color: black;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <video class="video" src="./Model S _ Tesla/tesla.mp4" autoplay loop muted></video>
+        <div class="sub-main">
+            <nav class="nav-bar">
+                <div class="div">
+                    <svg class="logo" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
+                            fill="white"></path>
+                    </svg>
+                    <!-- <img class="logo"
+                        src="./Model S _ Tesla/download.svg"
+                        alt=""> -->
+                </div>
+                <ul class="div1">
+                    <li class="list-items"><a href="#">Vehicles</a></li>
+                    <div class="dropdown">
+                        <div class="box2">
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/Model-S-Order-Hero-Desktop-Mobile-LHD.jpeg"
+                                        alt="">
+                                </div>
+                                <h1>Model S</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/Model-S-Exterior-Hero-Mobile-Global.jpeg"
+                                        alt="">
+                                </div>
+                                <h1>Model 3</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/Model-S-Performance-Desktop.jpg" alt="">
+                                </div>
+                                <h1>Model X</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/Model-S-Order-Hero-Desktop-Mobile-LHD.jpeg"
+                                        alt="">
+                                </div>
+                                <h1>Model Y</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/Model-S-Exterior-Hero-Mobile-Global.jpeg"
+                                        alt="">
+                                </div>
+                                <h1>Cybertruck</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/Model-S-Performance-Desktop.jpg" alt="">
+                                </div>
+                                <h1>Help Me Choose</h1>
+                                <div class="di-v2">
+                                    <h1>Get Started</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box3">
+                            <li>Inventory</li>
+                            <div class="bo-x"></div>
+                            <li>Used Cars</li>
+                            <div class="bo-x"></div>
+                            <li>Demo Drive</li>
+                            <div class="bo-x"></div>
+                            <li>Trade-in</li>
+                            <div class="bo-x"></div>
+                            <li>Compare</li>
+                            <div class="bo-x"></div>
+                            <li>Help Me Charge</li>
+                            <div class="bo-x1"></div>
+                            <li>Fleet</li>
+                            <div class="bo-x2"></div>
+                            <li>Semi</li>
+                            <div class="bo-x2"></div>
+                            <li>Roadster</li>
+                            <div class="bo-x"></div>
+                        </div>
+                    </div>
+                    <li class="list-items"><a href="#">Energy</a></li>
+                    <div class="dropdown">
+                        <div class="box2">
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/IMG-20240420-WA0022.jpg" alt="">
+                                </div>
+                                <h1>Solar Panels</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/IMG-20240420-WA0020.jpg" alt="">
+                                </div>
+                                <h1>Solar Roof</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/IMG-20240420-WA0018.jpg" alt="">
+                                </div>
+                                <h1>Powerwall</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/IMG-20240420-WA0021.jpg" alt="">
+                                </div>
+                                <h1>Megapack</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Order</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box3">
+                            <li>Schedule a Consultation</li>
+                            <div class="bo-x1"></div>
+                            <li>Why Solar</li>
+                            <div class="bo-x"></div>
+                            <li>Incentives</li>
+                            <div class="bo-x"></div>
+                            <li>Support</li>
+                            <div class="bo-x"></div>
+                            <li>Partner with tesla</li>
+                            <div class="bo-x1"></div>
+                            <li>Commercial</li>
+                            <div class="bo-x"></div>
+                            <li>Utilities</li>
+                            <div class="bo-x2"></div>
+                        </div>
+                    </div>
+                    <li class="list-items"><a href="#">Charging</a></li>
+                    <div class="dropdown1">
+                        <div class="box-2">
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/IMG-20240420-WA0024.jpg" alt="">
+                                </div>
+                                <h1>Charging</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="./Model S _ Tesla/IMG-20240420-WA0019.jpg" alt="">
+                                </div>
+                                <h1>Home charging</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Shop</h1>
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <div class="box5">
+                                    <img class="img" src="https://tesla-info.com/images/supercharger.jpg" alt="">
+                                </div>
+                                <h1>Supercharging</h1>
+                                <div class="di-v">
+                                    <h1>Learn</h1>
+                                </div>
+                                <div class="di-v1">
+                                    <h1>Find</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-3">
+                            <li>Help me charge</li>
+                            <div class="bo-x1"></div>
+                            <li>Charging Calculator</li>
+                            <div class="bo-x3"></div>
+                            <li>Charging with NACS</li>
+                            <div class="bo-x3"></div>
+                            <li>Supercharger Voting</li>
+                            <div class="bo-x3"></div>
+                            <li>Host a supercharging</li>
+                            <div class="bo-x3"></div>
+                            <li>Commercial Charging</li>
+                            <div class="bo-x3"></div>
+                            <li>Host wall Connectors</li>
+                            <div class="bo-x3"></div>
+
+                        </div>
+                    </div>
+                    <li class="list-items"><a href="#">Discover</a></li>
+                    <div class="dropdown1">
+                        <div class="bo-x4">
+                            <li id="hd">Resources</li>
+                            <div class="bo-x"></div>
+                            <li>Demo Drive</li>
+                            <div class="bo-x"></div>
+                            <li>Insurance</li>
+                            <div class="bo-x"></div>
+                            <li>Video Guides</li>
+                            <div class="bo-x1"></div>
+                            <li>Customer Stories</li>
+                            <div class="bo-x1"></div>
+                            <li>Events</li>
+                            <div class="bo-x2"></div>
+                        </div>
+                        <div class="bo-x4">
+                            <li id="hd">Location services</li>
+                            <div class="bo-x1"></div>
+                            <li>Find Us</li>
+                            <div class="bo-x"></div>
+                            <li>Find a Collision Center</li>
+                            <div class="bo-x3"></div>
+                            <li>Find a Certified Installer</li>
+                            <div class="bo-x3"></div>
+                        </div>
+                        <div class="bo-x4">
+                            <li id="hd">Company</li>
+                            <div class="bo-x"></div>
+                            <li>About</li>
+                            <div class="bo-x2"></div>
+                            <li>Careers</li>
+                            <div class="bo-x"></div>
+                            <li>Investor Relation</li>
+                            <div class="bo-x1"></div>
+                        </div>
+                    </div>
+                    <li class="list-items"><a href="#">Shop</a></li>
+                    <div class="dropdown2">
+                        <div class="dropdown2-div">
+                            <div class="dropdown2-div1">
+                                <img class="div-img" src="./Model S _ Tesla/IMG-20240420-WA0019.jpg" alt="">
+                                <h1>Charging</h1>
+                            </div>
+                            <div class="dropdown2-div1">
+                                <img class="div-img"
+                                    src="https://cdn.shopify.com/s/files/1/1724/5219/files/18__Aero_Cover_v1.jpg?v=1645145673"
+                                    alt="">
+                                <h1>Vehicle Accessories</h1>
+                            </div>
+                            <div class="dropdown2-div1">
+                                <img class="div-img"
+                                    src="https://m.media-amazon.com/images/I/419DHgF1nqL._AC_UY1100_DpWeblab_.jpg"
+                                    alt="">
+                                <h1>Apparel</h1>
+                            </div>
+                            <div class="dropdown2-div1">
+                                <img class="div-img" src="./Model S _ Tesla/IMG-20240420-WA0023.jpg" alt="">
+                                <h1>Lifestyle</h1>
+                            </div>
+
+                        </div>
+                    </div>
+                </ul>
+                <div class="div2">
+                    <i id="icon" class="fa-regular fa-circle-question"></i>
+                    <i id="icon" class="fa-solid fa-globe"></i>
+                    <i id="icon" class="fa-regular fa-address-book"></i>
+                </div>
+            </nav>
+            <div class="div3">
+                <h1>Model S</h1>
+                <h2>From $71,090*</h2>
+                <h3>After Est. Gas Savings</h3>
+            </div>
+            <div class="box">
+                <div class="boxes">
+                    <h1>359mi</h1>
+                    <h2>Range (EPA est.)</h2>
+                </div>
+                <div class="boxes">
+                    <h1>1.99s</h1>
+                    <h2>0-60 mph*</h2>
+                </div>
+                <div class="boxes">
+                    <h1>200mph</h1>
+                    <h2>Top Speed†</h2>
+                </div>
+                <div class="boxes">
+                    <h1>1,020hp</h1>
+                    <h2>Peak Power</h2>
+                </div>
+                <button title="Order Now" id="button">Order Now</button>
+                <button title="Demo Drive" id="button1">Demo Drive</button>
+            </div>
+            <div id="box1">
+                <p>*Price before savings is $74,990, excluding taxes and fees. Subject to change. <br>
+                    <span id="line">Learn about est. gas savings.</span><br>
+                    Specs displayed are Model S Plaid values.
+                </p>
+            </div>
+        </div>
+    </main>
+    <section class="background">
+        <div id="div4">
+            <div id="div-box">
+                <h1 data-aos="fade-up" data-aos-duration="2000">Interior of the Future</h1>
+            </div>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+        <img class="bg-img" src="./Model S _ Tesla/Model-S-Interior-Desktop.jpg" alt="">
+    </section>
+    <section class="background2">
+        <video class="videos v1"
+            src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/Model-S-Interior-Carousel-1-Cinematic-Display-Desktop-Global.mp4"
+            autoplay loop muted></video>
+        <video class="videos v2"
+            src="https://digitalassets.tesla.com/tesla-contents/video/upload/Model-S-Interior-Carousel-2-Yoke-Steering-Desktop.mp4"
+            autoplay loop muted></video>
+        <video class="videos v3"
+            src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/Model-S-Interior-Carousel-3-Perfect-Environment-Desktop.mp4"
+            autoplay loop muted></video>
+        <video class="videos v4"
+            src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/Model-S-Interior-Carousel-4-Second-Row-Desktop.mp4"
+            autoplay loop muted></video>
+        <video class="videos v5"
+            src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/MS-Interior-Carousel-5-Gaming-Mobile.mp4"
+            autoplay loop muted></video>
+    </section>
+    <section class="div5">
+        <div class="div6">
+            <div class="circle clr1"></div>
+            <div class="circle clr2"></div>
+            <div class="circle clr3"></div>
+            <div class="circle clr4"></div>
+            <div class="circle clr5"></div>
+        </div>
+    </section>
+    <section class="div7">
+        <div class="div8">
+            <h1 class="heading h1">Cinematic Experience</h1>
+            <p class="paragraph p1">A 17” touchscreen with left-right tilt offers 2200 x 1300 resolution, true colors
+                <br> and exceptional
+                responsiveness for gaming, movies and more.
+            </p>
+            <h1 class="heading h2">Yoke Steering</h1>
+            <p class="paragraph p2">A bold new approach gives you a true connection to Model S, offering better <br>
+                steering
+                feel and unobstructed views of your dash and the road ahead. Tap the <br> brake and Model S
+                automatically
+                selects the correct direction to start your <br> trip.</p>
+            <h1 class="heading h3">Perfect Environment</h1>
+            <p class="paragraph p3">Air vents are hidden throughout the cabin, while tri-zone temperature <br> controls,
+                ventilated seats and HEPA filtration deliver the perfect environment.</p>
+            <h1 class="heading h4">Redesigned Second Row</h1>
+            <p class="paragraph p4">Seating for three adults, with extra legroom, headroom and a stowable <br> armrest
+                with
+                integrated storage and wireless charging.</p>
+            <h1 class="heading h5">Tesla Arcade</h1>
+            <p class="paragraph p5">Play games on your in-car touchscreens.</p>
+        </div>
+    </section>
+    <section class="bg">
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <img class="bg-image" src="./Model S _ Tesla/Model-S-Interior-Grid-A-DMT.jpg" alt="">
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <h1>Stay Connected</h1>
+            <p>Instantly connect with multi-device Bluetooth, or <br> fast charge devices with wireless and 36-watt USB-
+                <br>C charging.
+            </p>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <h1>Immersive Sound</h1>
+            <p>A 22-speaker, 960-watt audio system with Active <br> Road Noise Reduction offers immersive listening <br>
+                and studio-grade sound quality.</p>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div class="bg-div">
+            <img class="bg-image" src="./Model S _ Tesla/Model-S-Specs-Hero-Mobile-LHD.jpeg" alt="">
+        </div>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <img class="bg-image" src="./Model S _ Tesla/MS-Interior-Grid-D-Desktop.jpeg" alt="">
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <h1>Room for Everything</h1>
+            <p>With front and rear trunks and fold-flat seats you <br> can fit your bike without taking the wheel
+                off—and <br> your luggage too.
+            <div class="compare">
+                <h1>Compare Models</h1>
+            </div>
+            </p>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg1">
+        <img src="./Model S _ Tesla/Model-S-Performance-Desktop (1).jpg" alt="">
+    </section>
+    <section data-aos="fade-up" data-aos-duration="2000" class="bg1-div">
+        <div class="bg1-div1">
+            <h1>1,020hp</h1>
+            <h2>Peak Power</h2>
+        </div>
+        <div class="bg1-div1">
+            <h1>9.23 s</h1>
+            <h2>@155 mph 1/4 mile</h2>
+        </div>
+        <div class="bg1-div1">
+            <h1>1.99 s</h1>
+            <h2>0-60 mph*</h2>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <section class="bg2">
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg2-div">
+            <div class="bg2div">
+                <p>Plaid</p>
+                <h1>Beyond Ludicrous</h1>
+                <button title="Order Now" class="order">Order Now</button>
+                <button title="Compare Models" class="model">Compare Models</button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg2-div1">
+            <p>Model S Plaid has the quickest acceleration of any vehicle in production. <br> Updated battery
+                architecture
+                for all Model S trims enables back-to-back track <br> runs without performance degradation. Chat with a
+                Tesla
+                Advisor to learn <br> more about Model S or schedule a demo drive today.</p>
+            <div class="chat"></div>
+            <div class="chat1"></div>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg3">
+        <div class="bg3-div">
+            <h1 data-aos="fade-up" data-aos-duration="2000">Electric Powertrain</h1>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <p data-aos="fade-up" data-aos-duration="2000">Model S platforms unite powertrain and battery technologies
+                for unrivaled performance, range and <br>
+                efficiency. New module and pack thermal architecture allows faster charging and gives you more power
+                <br> and
+                endurance in all conditions.
+            </p>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+        <div class="imge-div">
+            <img src="./Model S _ Tesla/Model-S-Plaid-Tri-Motor-Powertrain-Carousel-Mobile.jpeg" alt="">
+        </div>
+    </section>
+    <section class="bg4">
+        <div class="bg4-div">
+            <h1>Model S</h1>
+            <p>Dual Motor All-Wheel Drive unlocks more range than any other <br> vehicle in our current lineup, with
+                insane
+                power and maximum <br> control.</p>
+            <div class="bg4-div1">
+                <div class="bg4-div2">
+                    <h1>3.1 s</h1>
+                    <p>0-60 mph</p>
+                </div>
+                <div class="bg4-div2">
+                    <h1>402 mi</h1>
+                    <p>Range (EPA est.)</p>
+                </div>
+                <div class="bg4-div2">
+                    <h1>670 hp</h1>
+                    <p>Peak Power</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg4--div">
+            <h1>Model S Plaid</h1>
+            <p>Maintain 1,000+ horsepower all the way to 200 mph with Tri- <br>Motor All-Wheel Drive, featuring torque
+                vectoring and three <br> independent carbon-sleeved rotors.</p>
+            <div class="bg4-div1">
+                <div class="bg4-div2">
+                    <h1>1.99 s*</h1>
+                    <p>0-60 mph</p>
+                </div>
+                <div class="bg4-div2">
+                    <h1>359 mi</h1>
+                    <p>Range (EPA est.)</p>
+                </div>
+                <div class="bg4-div2">
+                    <h1>1020 hp</h1>
+                    <p>Peak Power</p>
+                </div>
+            </div>
+        </div>
+        <p data-aos="fade-up" data-aos-duration="2000" class="rollout">* With rollout subtracted</p>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg1">
+        <img src="./Model S _ Tesla/Model-S-Exterior-Hero-Desktop-Global.jpeg" alt="">
+    </section>
+    <section class="bg--2">
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg--2-div">
+            <div class="bg--2div">
+                <p>Exterior</p>
+                <h1>Designed for Efficiency</h1>
+                <button title="Order Now" class="order1">Order Now</button>
+                <button title="Demo Drive" class="demo">Demo Drive</button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-2-div1">
+            <p>With a drag coefficient of just .208 Cd, the lowest on the planet, Model S is <br> built for speed,
+                endurance
+                and range. Improved aerodynamics and a wider <br> chassis offer more responsive performance so you can
+                take
+                corners quicker <br> and with more confidence.</p>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg">
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <h1>Relentless Performance</h1>
+            <p>Staggered, performance wheels and tires keep the <br> car planted and help transfer maximum power <br>
+                down to the road.
+            </p>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <img class="bg-image" src="./Model S _ Tesla/Model-S-Exterior-Grid-A-Desktop-Global.jpeg" alt="">
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <img class="bg-image" src="./Model S _ Tesla/Model-S-Exterior-Grid-B-Desktop-Global.jpeg" alt="">
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <h1>Optimized Aerodynamics</h1>
+            <p>Attention to detail on all exterior surfaces makes <br> Model S the most aerodynamic production car on
+                <br> Earth.
+            </p>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <h1>Refined Styling</h1>
+            <p>An iconic silhouette meets refreshed, elegant <br> proportions.
+            </p>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg-div">
+            <img class="bg-image" src="./Model S _ Tesla/Model-S-Exterior-Grid-C-Desktop-Global.jpeg" alt="">
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg5">
+        <div class="bg5-div">
+            <video src="https://www.tesla.com/sites/default/files/videos/Plaid-Range-Web-Desktop-8mb.mp4" autoplay loop
+                muted></video>
+            <div class="bg5-div2">
+                <div data-aos="fade-up" data-aos-duration="2000" class="bg5-div3">
+                    <h1>402 mi</h1>
+                    <h2>Go anywhere with up to 402 miles of <br> estimated range on a single charge</h2>
+                </div>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+                <div data-aos="fade-up" data-aos-duration="2000" class="bg5-div3">
+                    <h1>15 min</h1>
+                    <h2>Recharge up to 200 miles in 15 minutes at <br> Supercharger locations</h2>
+                </div>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+                <div data-aos="fade-up" data-aos-duration="2000" class="bg5-div3">
+                    <h1>50,000 +</h1>
+                    <h2>Superchargers placed along popular <br> routes</h2>
+                </div>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+            </div>
+        </div>
+        <div class="bg5-div1">
+            <div class="bg5-div4">
+                <p data-aos="fade-up" data-aos-duration="2000" id="para1">Range</p>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+                <h1 data-aos="fade-up" data-aos-duration="2000">Go Anywhere</h1>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+                <p data-aos="fade-up" data-aos-duration="2000" id="para1">With up to 402 miles of estimated range and
+                    <br> access to the world’s largest and most <br> powerful fast
+                    charging network, you’ll spend <br> less time plugged in and more time on the <br> road. Chat with a
+                    Tesla
+                    Advisor to learn more <br> about Model S or schedule a demo drive <br> today.
+                </p>
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+                <div class="tesla-adviser"></div>
+                <div class="drive"></div>
+            </div>
+            <button data-aos="fade-up" data-aos-duration="2000" title="Order Now" class="button3">Order Now</button>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <button data-aos="fade-up" data-aos-duration="2000" title="Find My Route" class="button4">Find My
+                Route</button>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+    </section>
+    <section class="bg6">
+        <div class="bg3-div">
+            <h1 data-aos="fade-up" data-aos-duration="2000">Freedom to Travel</h1>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <p data-aos="fade-up" data-aos-duration="2000">Enter a destination on your touchscreen and Trip Planner will
+                automatically calculate your route with Superchargers along the way.</p>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+        <div class="imge-div">
+            <img class="images img1" src="./Model S _ Tesla/SF-LA_Range-Map.jpeg" alt="">
+            <img class="images img2" src="./Model S _ Tesla/map_berkeley_bg@2x.jpeg" alt="">
+            <img class="images img3" src="./Model S _ Tesla/map_newyork_bg@2x.jpeg" alt="">
+            <img class="images img4" src="./Model S _ Tesla/map_florida_bg@2x.jpeg" alt="">
+        </div>
+    </section>
+    <section class="bg7">
+        <div class="bg7-div">
+            <h1>San Francisco to Los Angeles</h1>
+            <h1 id="bg7-hd">383 miles</h1>
+        </div>
+        <div class="bg7-div1">
+            <h1>Berkeley to Lake Tahoe</h1>
+            <h1 id="bg7-hd1">178 miles</h1>
+        </div>
+        <div class="bg7-div2">
+            <h1>Manhattan to Boston</h1>
+            <h1 id="bg7-hd2">211 miles</h1>
+        </div>
+        <div class="bg7-div3">
+            <h1>Fort Lauderdale to Orlando</h1>
+            <h1 id="bg7-hd3">195 miles</h1>
+        </div>
+        <button data-aos="fade-up" data-aos-duration="2000" title="Learn More" class="order2">Learn More</button>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg8">
+        <img class="bg8-img" src="./Model S _ Tesla/compositor (1).png" alt="">
+        <div class="bg8-div">
+            <h1>Demo Drive Model S</h1>
+            <p>Enter a zip code to find Tesla showrooms near you:</p>
+            <input class="input" type="number" placeholder="47040">
+            <button title="Next" class="next">Next</button>
+        </div>
+    </section>
+    <section class="bg9">
+        <div class="bg9-div">
+            <h1 data-aos="fade-up" data-aos-duration="2000">Safety</h1>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <h2 data-aos="fade-up" data-aos-duration="2000">High Impact <br> Protection</h2>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <p data-aos="fade-up" data-aos-duration="2000">Model S is built from the ground up as an <br> electric
+                vehicle, with a high-strength <br> architecture and
+                floor-mounted battery <br> pack for incredible occupant protection and <br> low rollover risk. Every new
+                Model S <br>
+                includes Tesla’s latest active safety features, <br> such as Automatic Emergency Braking, at <br> no
+                extra cost.
+            </p>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <button data-aos="fade-up" data-aos-duration="2000" title="Order Now" id="order4">Order Now</button>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <button data-aos="fade-up" data-aos-duration="2000" title="Demo Drive" id="demo1">Demo Drive</button>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+        <div class="bg9-div1">
+            <img class="bg9-img" src="./Model S _ Tesla/Model-S-Safety-Hero-Desktop-Global.jpeg" alt="">
+        </div>
+        <div class="bg9-div2">
+            <h1>Front-Impact P</h1>
+        </div>
+    </section>
+    <section class="bg10">
+        <img class="bg10-img" src="./Model S _ Tesla/Autopilot-Hero-Vision_Desktop.jpeg" alt="">
+        <div class="bg10-div">
+            <div data-aos="fade-up" data-aos-duration="2000" class="bg10-div1">
+                <h1>360°</h1>
+                <p>Rear, side and forward-facing cameras <br> provide maximum visibility</p>
+            </div>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <div data-aos="fade-up" data-aos-duration="2000" class="bg10-div1">
+                <h1>250 m</h1>
+                <p>Powerful visual processing at up to 250 <br> meters of range</p>
+            </div>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <div data-aos="fade-up" data-aos-duration="2000" class="bg10-div1">
+                <img src="./Model S _ Tesla/download (26).svg" alt="">
+                <p>Tesla Vision detects nearby cars, helps <br> prevent potential collisions and assists <br> with
+                    parking</p>
+            </div>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+    </section>
+    <section class="bg2">
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg2-div">
+            <div class="bg2div">
+                <p>Autopilot</p>
+                <h1>Future of Driving</h1>
+                <button title="Order Now" class="order">Order Now</button>
+                <button title="Demo Drive" class="model">Demo Drive</button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <div data-aos="fade-up" data-aos-duration="2000" class="bg2-div1">
+            <p>Autopilot enables your car to steer, accelerate and brake automatically within <br> its lane under your
+                active
+                supervision, assisting with the most burdensome <br> parts of driving. With over-the-air software
+                updates,
+                the latest enhancements <br> are available instantly. Chat with a Tesla Advisor to learn more about
+                Model S <br>
+                or schedule a demo drive today.</p>
+            <div class="chat2"></div>
+            <div class="chat3"></div>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </section>
+    <section class="bg6">
+        <div class="bg3-div">
+            <h1 data-aos="fade-up" data-aos-duration="2000">Features</h1>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            <p data-aos="fade-up" data-aos-duration="2000">Full Self-Driving capability introduces additional features
+                and improves existing functionality to make your <br> vehicle more capable over time, including:</p>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        </div>
+        <div class="imge-div1">
+            <video src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/summon_1-mp4.mp4"
+                autoplay loop muted></video>
+        </div>
+    </section>
+    <section class="bg7">
+        <div class="bg7-div">
+            <h1 id="bg7-hd">Navigate on <br> Autopilot</h1>
+            <h1>Active guidance from <br> on-ramp to off-ramp</h1>
+        </div>
+        <div class="bg7-div1">
+            <h1 id="bg7-hd1">Auto Lane Change</h1>
+            <h1>Automatically change <br> lanes while driving on <br> the highway</h1>
+        </div>
+        <div class="bg7-div2">
+            <h1 id="bg7-hd2">Summon</h1>
+            <h1>Automatically retrieve <br> your car</h1>
+        </div>
+        <div class="bg7-div3">
+            <h1 id="bg7-hd3">Autopark</h1>
+            <h1>Parallel and <br> perpendicular parking <br> with a single touch</h1>
+        </div>
+    </section>
+    <section class="bg-1">
+        <div class="bg-1div">
+            <img src="./Model S _ Tesla/Model-S-Specs-Hero-Desktop-LHD.jpeg" alt="">
+        </div>
+        <div class="bg-1div1">
+            <h1>Model S Specs</h1>
+            <button class="button-1">Model S Plaid</button>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Range (EPA est.)</h1>
+                <p>359 mi</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>1/4 Mile</h1>
+                <p>9.23@155 mph trap speed</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Peak Power</h1>
+                <p>1,020 hp</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>*Acceleration</h1>
+                <p>1.99 s 0-60 mph <br>
+                    with rollout subtracted</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Wheels</h1>
+                <p>19" or 21"</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Cargo</h1>
+                <p>28 cu ft</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Weight</h1>
+                <p>4,776 lbs</p>
+            </div>
+        </div>
+        <div class="bg-1div2">
+            <button class="button-2">Model S</button>
+            <div class="bg-1div4">
+                <div class="bg-1div7"></div>
+                <h1>Top Speed</h1>
+                <p>200 mph <br>when equipped with paid hardware upgrades</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Drag Coefficient</h1>
+                <p>0.208 Cd</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Powertrain</h1>
+                <p>Tri Motor</p>
+            </div>
+            <div class="bg-1div3">
+                <div class="bg-1div7"></div>
+                <h1>Supercharging Max</h1>
+                <p>250 kW</p>
+            </div>
+            <div class="bg-1div5">
+                <div class="bg-1div7"></div>
+                <h1>Warranty</h1>
+                <p>Basic Vehicle - 4 years or <br> 50,000 miles, whichever <br> comes first <br>
+                    Battery & Drive Unit - 8 <br> years or 150,000 miles, <br> whichever comes first</p>
+            </div>
+            <div class="bg-1div6">
+                <p>See Details</p>
+            </div>
+        </div>
+        <div title="Compare Models" class="button-5">Compare Models</div>
+    </section>
+    <section class="bg-2">
+        <div class="bg-2div1">
+            <h1>Model S</h1>
+            <p>Design yours or get a trade-in estimate for your current <br> vehicle.</p>
+            <button title="Order Now" class="bg-2-button">Order Now</button>
+            <button title="Get an Estimate" class="bg-2-button1">Get an Estimate</button>
+        </div>
+        <div class="bg-2div1">
+            <img src="./Model S _ Tesla/Model-S-Order-Hero-Desktop-Mobile-LHD.jpeg" alt="">
+        </div>
+        <div class="bg-2div2">
+            <p>Certain high data usage vehicle features require at least Standard Connectivity, including maps,
+                navigation <br>and voice commands. Access to features that use cellular data and third-party licenses are
+                subject to <br> change. <span id="span">Learn more about Standard Connectivity and any limitations.</span></p>
+                <div class="bg-2div3"></div> 
+        </div>
+        <div class="ul">
+            <li>Tesla © 2024</li>
+            <li>Privacy & Legal</li>
+            <li>Vehicle Recalls</li>
+            <li>Contact</li>
+            <li>News</li>
+            <li>Get Updates</li>
+            <li>Locations</li>
+        </div>
+    </section>
+
+</body>
+
+</html>
